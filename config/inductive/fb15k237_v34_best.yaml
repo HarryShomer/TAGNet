@@ -1,0 +1,38 @@
+output_dir: ~/scratch/experiments/
+
+dataset:
+  class: IndFB15k-237
+  root: ~/datasets/knowledge_graphs/
+  version: {{ version }}
+
+model:
+  class: TAGNet
+  input_dim: 32
+  hidden_dims: [32, 32, 32, 32, 32, 32]
+  message_func: distmult
+  aggregate_func: pna
+  dependent: yes
+  remove_one_hop: no
+  boundary_condition: yes
+  bias: no
+  drop: 0.7
+  degree_msgs: yes
+
+task:
+  num_negative: 256
+  strict_negative: yes
+  adversarial_temperature: 1
+  metric: [hits@10, hits@10_50]
+
+optimizer:
+  class: Adam
+  lr: 5.0e-3
+  weight_decay: 1.0e-4
+
+train:
+  gpus: {{ gpus }}
+  batch_size: 64
+  num_epoch: 16
+  log_interval: 100
+  decay: 0.95
+
