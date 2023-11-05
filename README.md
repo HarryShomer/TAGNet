@@ -1,6 +1,6 @@
 # TAGNet
 
-Implementation of the paper ["Distance-Based Propagation for Efficient Knowledge Graph Reasoning"]() (EMNLP 2023).
+Implementation of the paper ["Distance-Based Propagation for Efficient Knowledge Graph Reasoning"](https://arxiv.org/abs/2311.01024) (EMNLP 2023).
 
 ## Abstract
 
